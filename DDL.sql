@@ -1,46 +1,46 @@
-drop schema if exists misic;
-create schema misic;
+drop schema if exists music;
+create schema music;
 
-drop table if exists misic.artist;
-create external table if not exists misic.artist (
+drop table if exists music.artist;
+create external table if not exists music.artist (
     ArtistId INTEGER NOT NULL,
     Name VARCHAR(120) NOT NULL
 ) as copy from '/tmp/data/Artist.csv' delimiter ',';
 
-drop table if exists misic.album;
-create external table if not exists misic.album (
+drop table if exists music.album;
+create external table if not exists music.album (
     AlbumId INTEGER  NOT NULL,
     Title VARCHAR(160)  NOT NULL,
     ArtistId INTEGER  NOT NULL
 ) as copy from '/tmp/data/Album.csv' delimiter ',';
 
-drop table if exists misic.genre;
-create external table if not exists misic.genre (
+drop table if exists music.genre;
+create external table if not exists music.genre (
     GenreId INTEGER  NOT NULL,
     Name VARCHAR(120)
  ) as copy from '/tmp/data/Genre.csv' delimiter ',';
 
 
-drop table if exists misic.genre;
-create external table if not exists misic.genre (
+drop table if exists music.genre;
+create external table if not exists music.genre (
     GenreId INTEGER  NOT NULL,
     Name VARCHAR(120)
  ) as copy from '/tmp/data/Genre.csv' delimiter ',';
  
-drop table if exists misic.playlist;
-create external table if not exists misic.playlist (
+drop table if exists music.playlist;
+create external table if not exists music.playlist (
     PlaylistId INTEGER  NOT NULL,
     Name VARCHAR(120)
  ) as copy from '/tmp/data/Playlist.csv' delimiter ',';
  
-drop table if exists misic.playlisttrack; 
-create external table if not exists misic.playlisttrack (
+drop table if exists music.playlisttrack; 
+create external table if not exists music.playlisttrack (
     PlaylistId INTEGER  NOT NULL,
     TrackId INTEGER  NOT NULL
  ) as copy from '/tmp/data/PlaylistTrack.csv' delimiter ',';    
     
-drop table if exists misic.track;
-create external table if not exists misic.track (    
+drop table if exists music.track;
+create external table if not exists music.track (    
       TrackId INTEGER  NOT NULL,
     Name VARCHAR(200)  NOT NULL,
     AlbumId INTEGER,
