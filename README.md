@@ -28,7 +28,8 @@ Vertica
 ## Разворачивание базы:
 Качаем докер с Vertica, поднимаем его и засовываем в него папку с входными данными:
 
-```docker pull dataplatform/docker-vertica
+```
+docker pull dataplatform/docker-vertica
 
 docker run -p 5433:5433 -d -v /home/olibu/spark/vertica_db/data:/tmp/data dataplatform/docker-vertica
 ```
